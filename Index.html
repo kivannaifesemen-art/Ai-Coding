@@ -1,182 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Album</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Website</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      background: #dbeafe; /* light blue background */
-      color: #111827;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    /* ---------- HEADER ---------- */
+    body {
+      background: linear-gradient(to bottom,#333,#111); 
+      color: #f7f7f7;
+      line-height: 1.6;
+    }
+
     header {
+      background: #1e1e1e;
+      padding: 20px;
       text-align: center;
-      padding: 3rem 2rem;
-      background: linear-gradient(135deg, #4f46e5, #0ea5e9, #9333ea);
-      color: white;
     }
 
     header h1 {
-      font-size: 3rem;
-      margin: 0;
-      display: inline-block;
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-
-    header h1::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 0;
-      height: 4px;
-      background: #38bdf8; /* teal underline */
-      transition: width 0.5s ease;
-    }
-
-    header h1:hover::after {
-      width: 100%;
-    }
-
-    header p {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #e0f2fe;
-    }
-
-    /* ---------- ALBUM COVER ---------- */
-    .album-cover {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    .album-cover img {
-      width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.3);
-    }
-
-    /* ---------- BIO SECTIONS ---------- */
-    .bio {
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .bio-box {
-      background: #f3e8ff; /* soft violet background */
-      color: #1e1b4b;      /* deep text color */
-      padding: 40px 30px;
-      max-width: 900px;
-      text-align: center;
-      border-radius: 15px;            
-      box-shadow: 0 8px 20px rgba(75, 0, 130, 0.25);
-      border: 1px solid #c4b5fd;
-    }
-
-    .bio-box h2 {
       font-size: 2rem;
-      margin-bottom: 15px;
-      color: #4f46e5;
+      color: #d4af37; /* gold accent */
     }
 
-    .bio-box p {
-      line-height: 1.7;
-      font-size: 1.1rem;
+    nav {
+      margin-top: 10px;
     }
 
-    /* ---------- TRACKLIST ---------- */
-    .tracklist {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-
-    .track {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .track:last-child {
-      border-bottom: none;
-    }
-
-    .track span {
-      font-weight: bold;
-      color: #111827;
-    }
-
-    .track a {
-      background: #4f46e5;
+    nav a {
+      color:#fff;
       text-decoration: none;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      margin: 0 15px;
       font-weight: bold;
-      transition: background 0.3s;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
 
-    .track a:hover {
-      background: #0ea5e9;
+    nav a:hover {
+      color: #d4af37;
     }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .album, .about {
+      max-width: 900px;
+      margin: auto;
+      background: #2c2c2c;
+      color:#f7f7f7;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .tickets, .contact {
+      max-width: 900px;
+      margin: auto;
+      background: #2c2c2c;
+      color: #f7f7f7;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+
+    .album img {
+      width: 200px;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .tickets button {
+      background: #d4af37;
+      color: #1e1e1e;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tickets button:hover {
+      background: #f0c94d;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    form button {
+      background: #d4af37;
+      color: #1e1e1e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #f0c94d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e1e1e;
+      color: #f7f7f7;
+      margin-top: 30px;
+    }
+
+    footer span {
+      color: #d4af37;
+      font-weight: bold;
+    }
+
+    /* SLIDER STYLES */
+    .slideshow-container {
+      position: relative;
+      max-width: 700px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      color: #d4af37;
+      font-size: 20px;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
   </style>
 </head>
-
 <body>
-
   <header>
-    <h1>Now You See Me</h1>
-    <p>By Ivanna</p>
+    <h1>🎶 My Music Website</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#album">Album</a>
+      <a href="#tickets">Tickets</a>
+      <a href="abt d author.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <div class="album-cover">
-    <img src="ChatGPT Image Aug 14, 2025, 03_20_09 PM.png" alt="Album Cover" width="300" height="300">
-  </div>  
+  <section id="album">
+    <div class="album">
+      <h2>Latest Album</h2>
+      <img src="ChatGPT Image Aug 8, 2025, 12_45_17 PM.png" alt="Album Cover">
+      <p>Check out my brand new album full of vibes and soul.</p>
 
-  <section class="bio">
-    <div class="bio-box">
-      <h2>About the Album</h2>
-      <p>
-        <em>Fake Smiles Don’t Fool Me</em> is a bold reflection of hidden struggles and strength, showing that masks and false laughter can’t hide the truth. Among its powerful tracks, <em>Now You See Me</em> shines as an anthem of transformation and confidence, proving that the world can no longer ignore the light within.
-      </p>
+      <a href="album.html" style="padding: 12px 24px; background: gold; color: black; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        🎶 View Album
+      </a>
     </div>
   </section>
 
-  <section class="bio">
-    <div class="bio-box">
-      <h2>About the Author</h2>
-      <p>
-        Ivanna Ifesemen is a Nigerian 12-year-old girl who took the world by storm when she released her first album. She started her music career at a very young age but with the disapproval of her siblings she cast it aside. But when she started singing again she got approval from her peers she decided that she wasn't going to let anyone decide her fate, so she started singing again and with great talent. She even got third in her school's talent show
-      </p>
+  <section id="tickets">
+    <div class="tickets">
+      <h2>Get Your Tickets</h2>
+      <p>Don’t miss out on my upcoming tour! Grab your tickets now.</p>
+
+      <div class="slideshow-container">
+        <div class="slides">
+          <img src="ChatGPT Image Aug 21, 2025, 12_17_35 PM.png" alt="Europe Tour">
+          <img src="adacacb7-30ee-46e3-81d1-bffa6c6bafe7.jpg" alt="Texas Tour">
+          <img src="abee0eda-273a-41c3-8705-1327c18911fb.jpg" alt="Dubai Tour">
+          <img src="2e95ee84-2d10-48e2-a546-32884dc4c91b.jpg" alt="Canada Tour">
+          <img src="ChatGPT Image Aug 21, 2025, 12_47_34 PM.png" alt="Nigeria Tour">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+
+      <a href="Buy Tickets.html">
+        <button>Buy Tickets</button>
+      </a>
     </div>
   </section>
 
-  <div class="tracklist">
-    <div class="track">
-      <span>1. Now You See Me</span>
-      <a href="Now You See Me.html" target="_blank">Listen</a>
+  <section id="contact">
+    <div class="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <a href="r.html" style="padding: 12px 24px; background: gold; color: black; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+          Submit
+        </a>
+      </form>
     </div>
+  </section>
 
-    <div class="track">
-      <span>2. Fake Smiles Don’t Fool Me</span>
-      <a href="Fake smiles dont fool me.html" target="_blank">Listen</a>
-    </div>
-  </div>
+  <footer>
+    <p>&copy; 2025 <span>My Music Website</span>. All rights reserved.</p>
+  </footer>
 
+  <script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+      if (i >= images.length) index = 0;
+      else if (i < 0) index = images.length - 1;
+      else index = i;
+      slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => showSlide(index - 1));
+    nextBtn.addEventListener('click', () => showSlide(index + 1));
+
+    setInterval(() => showSlide(index + 1), 5000);
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://iluvmyself12345678910.app.n8n.cloud/webhook/553f8f60-ae7f-4c59-883a-3b84923b7338/chat'
+	});
+</script>
 </body>
 </html>
