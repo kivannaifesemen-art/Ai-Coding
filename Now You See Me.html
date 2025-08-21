@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Now You See Me - Lyrics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #1e1b4b; /* deep indigo background */
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #4f46e5, #0ea5e9, #9333ea);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      display: inline-block;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    header h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 0;
+      height: 4px;
+      background: #38bdf8; /* teal underline */
+      transition: width 0.5s ease;
+    }
+
+    header h1:hover::after {
+      width: 100%;
+    }
+
+    /* Floating circles */
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      animation: float 8s infinite ease-in-out;
+    }
+    header::before {
+      width: 200px; height: 200px;
+      top: -60px; left: -60px;
+    }
+    header::after {
+      width: 150px; height: 150px;
+      bottom: -50px; right: -50px;
+      animation-duration: 10s;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(25px) rotate(45deg); }
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #a5f3fc; /* light aqua */
+    }
+
+    /* BUTTONS */
+    .btn-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s ease, background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .listen {
+      background: #6366f1; /* indigo */
+    }
+    .listen:hover {
+      background: #4f46e5;
+    }
+
+    .download {
+      background: #0ea5e9; /* sky blue */
+    }
+    .download:hover {
+      background: #0284c7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Now You See Me</h1>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Verse 1</h2>
+      <p>
+       Back in seventh grade, they laughed at my name Called me every word that wasn’t close to pretty I used to hide my face, cryin’ every day Wished I could disappear, wished they’d stop lookin’ at me But there was you, in the corner of the room Eyes that didn’t lie, saw a different kind of truth You said, “Don’t believe them, girl, you’re more than what they see” And for once, I felt like I could finally breathe
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Pre-Chorus</h2>
+      <p>
+        Now I glow, now I shine...  
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Chorus</h2>
+      <p>
+        Now you see me, now you care...  
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Verse 2</h2>
+      <p>
+        Eighth grade now, and suddenly you textin’...  
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Outro</h2>
+      <p>
+        You can't gaslight a girl who found her flame...  
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Final Chorus</h2>
+      <p>
+        Now you see me, now you care...  
+      </p>
+    </div>
+  </main>
+
+  <div class="btn-container">
+    <!-- Listen button -->
+    <a href="#" class="btn listen" 
+       onclick="document.getElementById('song1').play(); return false;">
+      🎵 Listen to Song
+    </a>
+
+    <!-- Download button -->
+    <a href="huntrix_-_golden_(zf.fm).mp3" download class="btn download">
+      ⬇️ Download Song
+    </a>
+  </div>
+
+  <!-- Hidden audio -->
+  <audio id="song1" style="display:none;">
+    <source src="huntrix_-_golden_(zf.fm).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div style="text-align: center; margin: 30px;">
+  <a href="Index.html" 
+     style="display:inline-block; padding:12px 24px; background:#4f46e5; color:white; text-decoration:none; border-radius:8px; font-weight:bold; box-shadow:0 4px 10px rgba(79,70,229,0.3);">
+    ⬅️ Return to Home
+  </a>
+</div>
+
+
+</body>
+</html>

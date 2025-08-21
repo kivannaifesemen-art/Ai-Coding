@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Album</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #dbeafe; /* light blue background */
+      color: #111827;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #4f46e5, #0ea5e9, #9333ea);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      display: inline-block;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 0;
+      height: 4px;
+      background: #38bdf8; /* teal underline */
+      transition: width 0.5s ease;
+    }
+
+    header h1:hover::after {
+      width: 100%;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #e0f2fe;
+    }
+
+    /* ---------- ALBUM COVER ---------- */
+    .album-cover {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .album-cover img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    }
+
+    /* ---------- BIO SECTIONS ---------- */
+    .bio {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .bio-box {
+      background: #f3e8ff; /* soft violet background */
+      color: #1e1b4b;      /* deep text color */
+      padding: 40px 30px;
+      max-width: 900px;
+      text-align: center;
+      border-radius: 15px;            
+      box-shadow: 0 8px 20px rgba(75, 0, 130, 0.25);
+      border: 1px solid #c4b5fd;
+    }
+
+    .bio-box h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #4f46e5;
+    }
+
+    .bio-box p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- TRACKLIST ---------- */
+    .tracklist {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .track {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .track:last-child {
+      border-bottom: none;
+    }
+
+    .track span {
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .track a {
+      background: #4f46e5;
+      text-decoration: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .track a:hover {
+      background: #0ea5e9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Now You See Me</h1>
+    <p>By Ivanna</p>
+  </header>
+
+  <div class="album-cover">
+    <img src="ChatGPT Image Aug 14, 2025, 03_20_09 PM.png" alt="Album Cover" width="300" height="300">
+  </div>  
+
+  <section class="bio">
+    <div class="bio-box">
+      <h2>About the Album</h2>
+      <p>
+        <em>Fake Smiles Don’t Fool Me</em> is a bold reflection of hidden struggles and strength, showing that masks and false laughter can’t hide the truth. Among its powerful tracks, <em>Now You See Me</em> shines as an anthem of transformation and confidence, proving that the world can no longer ignore the light within.
+      </p>
+    </div>
+  </section>
+
+  <section class="bio">
+    <div class="bio-box">
+      <h2>About the Author</h2>
+      <p>
+        Ivanna Ifesemen is a Nigerian 12-year-old girl who took the world by storm when she released her first album. She started her music career at a very young age but with the disapproval of her siblings she cast it aside. But when she started singing again she got approval from her peers she decided that she wasn't going to let anyone decide her fate, so she started singing again and with great talent. She even got third in her school's talent show
+      </p>
+    </div>
+  </section>
+
+  <div class="tracklist">
+    <div class="track">
+      <span>1. Now You See Me</span>
+      <a href="Now You See Me.html" target="_blank">Listen</a>
+    </div>
+
+    <div class="track">
+      <span>2. Fake Smiles Don’t Fool Me</span>
+      <a href="Fake smiles dont fool me.html" target="_blank">Listen</a>
+    </div>
+  </div>
+
+</body>
+</html>
