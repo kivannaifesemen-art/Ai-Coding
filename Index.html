@@ -149,6 +149,7 @@
     .slides img {
       width: 100%;
       border-radius: 15px;
+      flex-shrink: 0;
     }
 
     .prev, .next {
@@ -166,6 +167,19 @@
 
     .prev { left: 10px; }
     .next { right: 10px; }
+
+    /* COUNTDOWN BOX */
+    #countdown {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #d4af37;
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
   </style>
 </head>
 <body>
@@ -197,6 +211,10 @@
       <h2>Get Your Tickets</h2>
       <p>Don’t miss out on my upcoming tour! Grab your tickets now.</p>
 
+      <!-- Countdown -->
+      <h3 style="color:#d4af37;">Countdown to Tour</h3>
+      <div id="countdown"></div>
+
       <div class="slideshow-container">
         <div class="slides">
           <img src="ChatGPT Image Aug 21, 2025, 12_17_35 PM.png" alt="Europe Tour">
@@ -214,6 +232,7 @@
       </a>
     </div>
   </section>
+  
 
   <section id="contact">
     <div class="contact">
@@ -234,6 +253,7 @@
   </footer>
 
   <script>
+    // Slideshow
     const slides = document.querySelector('.slides');
     const images = document.querySelectorAll('.slides img');
     const prevBtn = document.querySelector('.prev');
@@ -251,14 +271,39 @@
     nextBtn.addEventListener('click', () => showSlide(index + 1));
 
     setInterval(() => showSlide(index + 1), 5000);
-  </script>
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-	createChat({
-		webhookUrl: 'https://iluvmyself12345678910.app.n8n.cloud/webhook/553f8f60-ae7f-4c59-883a-3b84923b7338/chat'
-	});
-</script>
+    // Countdown
+    const tourDate = new Date("Dec 1, 2025 20:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = tourDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "🎉 The Tour Has Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://iluvmyself12345678910.app.n8n.cloud/webhook/553f8f60-ae7f-4c59-883a-3b84923b7338/chat'
+    });
+  </script>
 </body>
 </html>
