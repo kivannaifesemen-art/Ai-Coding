@@ -212,22 +212,30 @@
     </div>
   </main>
 
-  <div class="button-container">
+  <div class="btn-container">
     <!-- Listen button -->
-    <a href="#" onclick="document.getElementById('song2').play(); return false;">🎵 Listen to Song</a>
+    <a href="#" class="btn listen" 
+       onclick="document.getElementById('song1').play(); return false;">
+      🎵 Listen to Song
+    </a>
 
     <!-- Download button -->
-    <a href="huntrix_-_how_its_done_(zf.fm).mp3" download>⬇️ Download Song</a>
-
-    <!-- Return Home button -->
-    <a href="index.html">⬅️ Return to Home</a>
+    <a href="huntrix_-_how_its_done_(zf.fm).mp3" download class="btn download">
+      ⬇️ Download Song
+    </a>
   </div>
 
-  <!-- Hidden audio player -->
-  <audio id="song2" style="display:none;">
+  <!-- Hidden audio -->
+  <audio id="song1" style="display:none;">
     <source src="huntrix_-_how_its_done_(zf.fm).mp3" type="audio/mpeg">
     Your browser does not support the audio element.
-  </audio>d
+  </audio>
+  <div style="text-align: center; margin: 30px;">
+  <a href="album.html" 
+     style="display:inline-block; padding:12px 24px; background:#4f46e5; color:white; text-decoration:none; border-radius:8px; font-weight:bold; box-shadow:0 4px 10px rgba(79,70,229,0.3);">
+    ⬅️ Return to Home
+  </a>
+</div>
   
 
 </body>
